@@ -1,0 +1,43 @@
+openapi: 3.0.3
+info:
+  title: The Predictive Index Integration Behavioral Assessments Jobs API
+  version: v1
+  description: 'RESTful Integration API for The Predictive Index talent optimization platform. Provides programmatic access to PI Jobs, Behavioral Assessments, and Cognitive Assessments — create and send assessments to candidates or employees and retrieve reports and results. The Jobs and Assessments created and retrieved through the API are the same data that appears within the PI Portal software. NOTE: This description was reconstructed by the API Evangelist enrichment pipeline from The Predictive Index public developer portal (https://developers.predictiveindex.com). Paths, HTTP methods, the api-key security scheme, and the production server were verified against the live portal and gateway (401 responses confirm the documented paths). Request and response schemas are intentionally left partial where the portal does not publish them — this is a documented-surface capture, not the provider''s canonical machine-readable spec (which is served behind Azure API Management subscription auth).'
+  x-provenance:
+    method: searched
+    source: https://developers.predictiveindex.com/integration-examples
+    generated: '2026-07-21'
+servers:
+- url: https://integrations.predictiveindex.com
+  description: Production
+security:
+- apiKeyAuth: []
+tags:
+- name: Jobs
+paths:
+  /api/v1/jobs/:
+    get:
+      operationId: listJobs
+      summary: Retrieve all jobs
+      description: Organizational positions with target factor ranges and candidate counts.
+      tags:
+      - Jobs
+      responses:
+        '200':
+          description: Job list
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+components:
+  responses:
+    RateLimited:
+      description: Too many requests. Requests are subject to a rate specified in the X-RateLimit-Limit response header, measured over a 60-second period.
+    Unauthorized:
+      description: Authorization has been denied for this request. The api-key is missing, invalid, or was generated under a user lacking org-admin permissions or who has been disabled.
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: api-key
+      description: 'API key sent in the api-key request header. The key is generated under a user with org-admin permissions (with cognitive access enabled) in the PI Software. Format: api-key: YOUR_APIKEY_GOES_HERE'
