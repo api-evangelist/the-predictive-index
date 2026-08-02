@@ -1,0 +1,50 @@
+generated: '2026-07-21'
+method: searched
+source: https://developers.predictiveindex.com/getting-started
+docs:
+  - https://developers.predictiveindex.com/getting-started
+  - https://developers.predictiveindex.com/integration-examples
+authentication:
+  style: api-key-header
+  header: api-key
+  ref: authentication/the-predictive-index-authentication.yml
+versioning:
+  scheme: uri-path
+  current: v1
+  base_path: /api/v1
+  notes: Version is carried in the URL path (/api/v1/...). No date/header version negotiation is documented.
+pagination:
+  documented: false
+  notes: No cursor/offset pagination scheme is published in the developer portal.
+idempotency:
+  supported: false
+  notes: >-
+    No idempotency-key header or de-duplication contract is documented. The
+    POST /api/v1/candidates endpoint is naturally upsert-like — it creates or
+    updates a candidate and returns isExistingCandidate to signal which occurred —
+    but this is not an explicit idempotency-key mechanism.
+rate_limiting:
+  signaled: true
+  header: X-RateLimit-Limit
+  window_seconds: 60
+  limit_count: null
+  notes: >-
+    Approved clients are subject to a rate specified in the X-RateLimit-Limit
+    response header, measured over a rolling 60-second period. No fixed numeric
+    limit is published; it is client/plan specific.
+error_envelope:
+  format: json
+  shape: '{ "Message": "..." }'
+  ref: errors/the-predictive-index-problem-types.yml
+  notes: >-
+    Errors return a JSON object with a Message property (e.g.
+    {"Message":"Authorization has been denied for this request."}). Not RFC 9457
+    problem+json.
+request_tracing:
+  documented: false
+events:
+  webhooks: true
+  ref: asyncapi/the-predictive-index-webhooks.yml
+status:
+  page: https://status.predictiveindex.com
+  ref: lifecycle/the-predictive-index-lifecycle.yml

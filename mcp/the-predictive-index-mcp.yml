@@ -1,0 +1,38 @@
+generated: '2026-07-21'
+method: derived
+status: candidate
+source: openapi/the-predictive-index-integrations-openapi.yml
+notes: >-
+  No official hosted/remote MCP server was found for The Predictive Index (their
+  agent-facing product, "Obi by PI", is a Slack assistant, not an MCP server).
+  This is a DERIVED candidate tool list mapping each documented Integration API
+  operation to a prospective MCP tool — a starting point, not a published server.
+server:
+  name: the-predictive-index
+  transport: http
+  url: null
+tools:
+  - name: list_candidates
+    description: Search for existing candidates.
+    source_operation: openapi/the-predictive-index-integrations-openapi.yml#listCandidates
+  - name: create_candidate
+    description: Create/update a candidate and send behavioral/cognitive assessments.
+    source_operation: openapi/the-predictive-index-integrations-openapi.yml#createCandidate
+  - name: update_candidate
+    description: Update an existing candidate (e.g. assign a new job).
+    source_operation: openapi/the-predictive-index-integrations-openapi.yml#updateCandidate
+  - name: get_candidate_insights_packet
+    description: Generate a Candidate Insights package.
+    source_operation: openapi/the-predictive-index-integrations-openapi.yml#getCandidateInsightsPacket
+  - name: list_jobs
+    description: Retrieve all jobs.
+    source_operation: openapi/the-predictive-index-integrations-openapi.yml#listJobs
+  - name: list_employees
+    description: Search for existing employees.
+    source_operation: openapi/the-predictive-index-integrations-openapi.yml#listEmployees
+  - name: get_employee_coaching_guide
+    description: Generate a Coaching Guide PDF report for an employee.
+    source_operation: openapi/the-predictive-index-integrations-openapi.yml#getEmployeeCoachingGuide
+  - name: get_behavioral_assessment_report
+    description: Generate a Behavioral Assessment PDF report.
+    source_operation: openapi/the-predictive-index-integrations-openapi.yml#getBehavioralAssessmentReport

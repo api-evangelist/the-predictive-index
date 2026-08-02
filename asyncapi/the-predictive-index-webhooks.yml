@@ -1,0 +1,80 @@
+generated: '2026-07-21'
+method: searched
+source: https://developers.predictiveindex.com/webhooks
+docs: https://developers.predictiveindex.com/webhooks
+type: Webhooks
+transport: http-post
+description: >-
+  The PI platform uses notification webhooks to communicate assessment status
+  changes to external systems. The listening system registers a Webhook URL
+  (default or per-request) and PI issues an HTTP POST to it on qualifying status
+  changes.
+delivery:
+  method: POST
+  authentication:
+    scheme: http-basic
+    notes: >-
+      Optional HTTP Basic credentials embedded in the webhook URL
+      (https://username:password@server.domain.com/listener/). Special characters
+      such as @ in the username must be URL-encoded.
+  ip_allowlist:
+    - 20.185.151.76
+    - 20.185.151.104
+    - 20.185.151.105
+  retry:
+    max_attempts: 9
+    strategy: exponential-backoff
+    window_hours: 24
+    success_codes: [200, 201]
+    retry_trigger_codes: [408, 429, 500, 502, 503, 504]
+    notes: >-
+      A webhook URL is called up to 9 times for a completed assessment using an
+      exponential back-off algorithm spanning up to 24 hours, until a 200-class
+      response is received or attempts are exhausted.
+triggering_statuses:
+  - status: 40
+    name: Completed
+    behavior: Called immediately upon completion.
+  - status: 60
+    name: Failed
+    applies_to: Cognitive assessments only
+    behavior: Called immediately upon failure of the software to correctly process the assessment.
+non_triggering_statuses:
+  - { status: 10, name: Sent }
+  - { status: 20, name: Opened }
+  - { status: 30, name: Started }
+  - { status: 50, name: Expired }
+  - { status: 65, name: Aborted }
+payload:
+  envelope:
+    event: { fields: [action, id, date] }
+    eventDetails: {}
+  behavioral_event_details:
+    - assessmentId
+    - externalAssessmentId
+    - assessmentSentDateTime
+    - assessmentCompletedDateTime
+    - referenceProfileName
+    - referenceProfileNumber
+    - languageLocale
+    - redirectURL
+    - behavioralFitRating
+    - assessmentState
+    - assessmentStateDescription
+    - person
+    - administeredBy
+    - job
+    - scoreId
+  cognitive_event_details:
+    - assessmentId
+    - externalAssessmentId
+    - assessmentSentDateTime
+    - assessmentCompletedDateTime
+    - languageLocale
+    - cognitiveFitDescription
+    - cognitiveScore
+    - assessmentState
+    - assessmentStateDescription
+    - person
+    - administeredBy
+    - job

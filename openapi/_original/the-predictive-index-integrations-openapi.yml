@@ -1,0 +1,166 @@
+openapi: 3.0.3
+info:
+  title: The Predictive Index Integration API
+  version: v1
+  description: >-
+    RESTful Integration API for The Predictive Index talent optimization
+    platform. Provides programmatic access to PI Jobs, Behavioral Assessments,
+    and Cognitive Assessments — create and send assessments to candidates or
+    employees and retrieve reports and results. The Jobs and Assessments created
+    and retrieved through the API are the same data that appears within the PI
+    Portal software.
+    NOTE: This description was reconstructed by the API Evangelist enrichment
+    pipeline from The Predictive Index public developer portal
+    (https://developers.predictiveindex.com). Paths, HTTP methods, the api-key
+    security scheme, and the production server were verified against the live
+    portal and gateway (401 responses confirm the documented paths). Request and
+    response schemas are intentionally left partial where the portal does not
+    publish them — this is a documented-surface capture, not the provider's
+    canonical machine-readable spec (which is served behind Azure API Management
+    subscription auth).
+  x-provenance:
+    method: searched
+    source: https://developers.predictiveindex.com/integration-examples
+    generated: '2026-07-21'
+servers:
+  - url: https://integrations.predictiveindex.com
+    description: Production
+security:
+  - apiKeyAuth: []
+tags:
+  - name: Candidates
+  - name: Employees
+  - name: Jobs
+  - name: Behavioral Assessments
+paths:
+  /api/v1/candidates/:
+    get:
+      operationId: listCandidates
+      summary: Search for an existing candidate
+      tags: [Candidates]
+      responses:
+        '200':
+          description: Candidate list
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+    post:
+      operationId: createCandidate
+      summary: Create a candidate and send an assessment
+      description: >-
+        Single entry point for all assessment-sending workflows. Handles
+        candidate creation or updating, job assignment, and assessment delivery
+        in one request. Returns an isExistingCandidate property indicating
+        whether a new candidate record was created.
+      tags: [Candidates]
+      responses:
+        '200':
+          description: Candidate created or updated and assessment sent
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+  /api/v1/candidates/{personId}:
+    patch:
+      operationId: updateCandidate
+      summary: Update an existing candidate (e.g. assign new job)
+      tags: [Candidates]
+      parameters:
+        - name: personId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Candidate updated
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+  /api/v1/candidates/{personId}/insightspacket:
+    get:
+      operationId: getCandidateInsightsPacket
+      summary: Generate a Candidate Insights package
+      tags: [Candidates]
+      parameters:
+        - name: personId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Candidate Insights packet
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+  /api/v1/jobs/:
+    get:
+      operationId: listJobs
+      summary: Retrieve all jobs
+      description: Organizational positions with target factor ranges and candidate counts.
+      tags: [Jobs]
+      responses:
+        '200':
+          description: Job list
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+  /api/v1/employees/:
+    get:
+      operationId: listEmployees
+      summary: Search for an existing employee
+      tags: [Employees]
+      responses:
+        '200':
+          description: Employee list
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+  /api/v1/employees/reports/coachingguide:
+    get:
+      operationId: getEmployeeCoachingGuide
+      summary: Generate a Coaching Guide PDF report for an employee
+      tags: [Employees]
+      responses:
+        '200':
+          description: Coaching Guide PDF report
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+  /api/v1/behavioralassessments/reports/behavioral:
+    get:
+      operationId: getBehavioralAssessmentReport
+      summary: Generate a Behavioral Assessment PDF report
+      tags: [Behavioral Assessments]
+      responses:
+        '200':
+          description: Behavioral Assessment PDF report
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+components:
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: api-key
+      description: >-
+        API key sent in the api-key request header. The key is generated under a
+        user with org-admin permissions (with cognitive access enabled) in the
+        PI Software. Format: api-key: YOUR_APIKEY_GOES_HERE
+  responses:
+    Unauthorized:
+      description: >-
+        Authorization has been denied for this request. The api-key is missing,
+        invalid, or was generated under a user lacking org-admin permissions or
+        who has been disabled.
+    RateLimited:
+      description: >-
+        Too many requests. Requests are subject to a rate specified in the
+        X-RateLimit-Limit response header, measured over a 60-second period.

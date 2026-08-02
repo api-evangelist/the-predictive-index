@@ -1,0 +1,6 @@
+Contact: https://www.predictiveindex.com/security/responsible-disclosure/
+Expires: 2028-02-21T05:48:00.000Z
+Acknowledgments: https://www.predictiveindex.com/security/responsible-disclosure/#security-researcher-hall-of-fame
+Preferred-Languages: en
+Canonical: https://predictiveindex.com/.well-known/security.txt
+Policy: https://www.predictiveindex.com/security/responsible-disclosure/#prohibited-activities

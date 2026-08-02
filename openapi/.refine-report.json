@@ -1,0 +1,20 @@
+{
+  "provider": "the-predictive-index",
+  "sources": [
+    "the-predictive-index-behavioral-assessments-api-openapi.yml",
+    "the-predictive-index-candidates-api-openapi.yml",
+    "the-predictive-index-employees-api-openapi.yml",
+    "the-predictive-index-jobs-api-openapi.yml"
+  ],
+  "outputs": [
+    "the-predictive-index-behavioral-assessments-api-openapi.yml",
+    "the-predictive-index-candidates-api-openapi.yml",
+    "the-predictive-index-employees-api-openapi.yml",
+    "the-predictive-index-jobs-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

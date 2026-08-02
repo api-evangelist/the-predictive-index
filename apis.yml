@@ -1,8 +1,17 @@
 aid: the-predictive-index
 name: The Predictive Index
-description: The Predictive Index is a company surfaced as a portfolio company of general-catalyst and
-  added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: >-
+  The Predictive Index (PI) is a talent optimization platform that pairs 70+ years
+  of behavioral science with software to help organizations hire, engage, and
+  develop teams — behavioral and cognitive assessments, hiring and candidate
+  screening, leadership development, employee engagement, and performance
+  management. PI publishes a RESTful Integration API (on Azure API Management)
+  that lets external systems such as ATS/HRIS platforms programmatically create
+  candidates, send behavioral and cognitive assessments, retrieve jobs and
+  results, and generate insight and coaching-guide reports — the same data that
+  appears in the PI Portal software. Status-change notification webhooks push
+  assessment completion events to listening systems. Backed by a $50M investment
+  from General Catalyst.
 url: https://raw.githubusercontent.com/api-evangelist/the-predictive-index/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,14 +19,167 @@ x-backed-by:
 - general-catalyst
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://media.predictiveindex.com/wp-content/uploads/2025/02/25165442/ThePredictiveIndex_Thumbnail-1.jpg
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
-apis: []
+- Talent Optimization
+- HR
+- Human Resources
+- Assessments
+- Behavioral Science
+- Hiring
+- Recruiting
+- Employee Engagement
+- Integration API
+apis:
+- aid: the-predictive-index:the-predictive-index-behavioral-assessments-api
+  name: The Predictive Index Behavioral Assessments API
+  description: >-
+    The Behavioral Assessments API from The Predictive Index — 1 operation(s) for behavioral assessments.
+  humanURL: https://developers.predictiveindex.com/
+  baseURL: https://integrations.predictiveindex.com
+  tags:
+  - Behavioral Assessments
+  properties:
+  - type: OpenAPI
+    url: openapi/the-predictive-index-behavioral-assessments-api-openapi.yml
+  - type: Authentication
+    url: authentication/the-predictive-index-authentication.yml
+  - type: Conventions
+    url: conventions/the-predictive-index-conventions.yml
+  - type: ErrorCatalog
+    url: errors/the-predictive-index-problem-types.yml
+  - type: Webhooks
+    url: asyncapi/the-predictive-index-webhooks.yml
+  - type: Lifecycle
+    url: lifecycle/the-predictive-index-lifecycle.yml
+- aid: the-predictive-index:the-predictive-index-candidates-api
+  name: The Predictive Index Candidates API
+  description: The Candidates API from The Predictive Index — 3 operation(s) for candidates.
+  humanURL: https://developers.predictiveindex.com/
+  baseURL: https://integrations.predictiveindex.com
+  tags:
+  - Candidates
+  properties:
+  - type: OpenAPI
+    url: openapi/the-predictive-index-candidates-api-openapi.yml
+  - type: Authentication
+    url: authentication/the-predictive-index-authentication.yml
+  - type: Conventions
+    url: conventions/the-predictive-index-conventions.yml
+  - type: ErrorCatalog
+    url: errors/the-predictive-index-problem-types.yml
+  - type: Webhooks
+    url: asyncapi/the-predictive-index-webhooks.yml
+  - type: Lifecycle
+    url: lifecycle/the-predictive-index-lifecycle.yml
+- aid: the-predictive-index:the-predictive-index-employees-api
+  name: The Predictive Index Employees API
+  description: The Employees API from The Predictive Index — 2 operation(s) for employees.
+  humanURL: https://developers.predictiveindex.com/
+  baseURL: https://integrations.predictiveindex.com
+  tags:
+  - Employees
+  properties:
+  - type: OpenAPI
+    url: openapi/the-predictive-index-employees-api-openapi.yml
+  - type: Authentication
+    url: authentication/the-predictive-index-authentication.yml
+  - type: Conventions
+    url: conventions/the-predictive-index-conventions.yml
+  - type: ErrorCatalog
+    url: errors/the-predictive-index-problem-types.yml
+  - type: Webhooks
+    url: asyncapi/the-predictive-index-webhooks.yml
+  - type: Lifecycle
+    url: lifecycle/the-predictive-index-lifecycle.yml
+- aid: the-predictive-index:the-predictive-index-jobs-api
+  name: The Predictive Index Jobs API
+  description: The Jobs API from The Predictive Index — 1 operation(s) for jobs.
+  humanURL: https://developers.predictiveindex.com/
+  baseURL: https://integrations.predictiveindex.com
+  tags:
+  - Jobs
+  properties:
+  - type: OpenAPI
+    url: openapi/the-predictive-index-jobs-api-openapi.yml
+  - type: Authentication
+    url: authentication/the-predictive-index-authentication.yml
+  - type: Conventions
+    url: conventions/the-predictive-index-conventions.yml
+  - type: ErrorCatalog
+    url: errors/the-predictive-index-problem-types.yml
+  - type: Webhooks
+    url: asyncapi/the-predictive-index-webhooks.yml
+  - type: Lifecycle
+    url: lifecycle/the-predictive-index-lifecycle.yml
+common:
+- type: DomainSecurity
+  url: security/the-predictive-index-domain-security.yml
+- type: DeveloperPortal
+  url: https://developers.predictiveindex.com/
+- type: Documentation
+  url: https://developers.predictiveindex.com/getting-started
+- type: APIReference
+  url: https://developers.predictiveindex.com/apis
+- type: GettingStarted
+  url: https://developers.predictiveindex.com/getting-started
+- type: Authentication
+  url: authentication/the-predictive-index-authentication.yml
+- type: Conventions
+  url: conventions/the-predictive-index-conventions.yml
+- type: Webhooks
+  url: asyncapi/the-predictive-index-webhooks.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: StatusPage
+  url: https://status.predictiveindex.com
+- type: Security
+  url: https://www.predictiveindex.com/security/responsible-disclosure/
+- type: VulnerabilityDisclosure
+  url: security/the-predictive-index-vulnerability-disclosure.yml
+- type: SecurityTxt
+  url: well-known/the-predictive-index-security.txt
+- type: WellKnown
+  url: well-known/the-predictive-index-well-known.yml
+- type: LLMsTxt
+  url: llms/the-predictive-index-llms.txt
+- type: GitHubOrganization
+  url: https://github.com/predictiveindex
+- type: Blog
+  url: https://www.predictiveindex.com/blog/
+- type: Support
+  url: https://www.predictiveindex.com/company/contact-us/#support-case
+- type: Pricing
+  url: https://www.predictiveindex.com/plans/
+- type: SignUp
+  url: https://app.predictiveindex.com/
+- type: TermsOfService
+  url: https://www.predictiveindex.com/terms/
+- type: PrivacyPolicy
+  url: https://www.predictiveindex.com/privacy/
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 14
+  pass: local-v1

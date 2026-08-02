@@ -1,0 +1,37 @@
+generated: '2026-07-21'
+method: searched
+source: https://developers.predictiveindex.com/faqs
+docs: https://developers.predictiveindex.com/faqs
+format: json-message-envelope
+envelope_field: Message
+notes: >-
+  Errors are returned as a JSON object with a Message property. Success response
+  codes are in the 200 range; 400 or higher indicates an error. The catalog below
+  is derived from the documented integration errors and the API's HTTP contract;
+  it is not RFC 9457 problem+json.
+problems:
+  - status: 401
+    title: Authorization has been denied for this request.
+    message: '"Message":"Authorization has been denied for this request."'
+    cause: >-
+      The api-key is missing/invalid, or the user the API key was generated under
+      lacks org-admin permissions (with cognitive access enabled), or that user
+      has been disabled in the PI Software.
+    remediation: >-
+      Verify the user has org-admin permissions with cognitive access enabled and
+      is active. If the user was disabled, generate a new API key under a different
+      active user.
+    source_operation: openapi/the-predictive-index-integrations-openapi.yml#createCandidate
+  - status: 429
+    title: Too many requests
+    cause: >-
+      Request rate exceeded the limit specified in the X-RateLimit-Limit response
+      header over the rolling 60-second window.
+    remediation: Back off and retry after the 60-second window; honor X-RateLimit-Limit.
+    source_operation: openapi/the-predictive-index-integrations-openapi.yml
+  - status: 400
+    title: Bad request
+    cause: Malformed request parameters or body.
+    remediation: >-
+      The portal recommends intentionally making mistakes with the 'Try it' console
+      to observe the exact error messages returned for invalid input.

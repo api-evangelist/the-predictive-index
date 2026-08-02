@@ -1,0 +1,7 @@
+generated: '2026-07-21'
+method: generated
+skills:
+  - file: the-predictive-index-send-assessment.md
+    name: Send a PI assessment to a candidate
+    api: openapi/the-predictive-index-integrations-openapi.yml
+    operations: [createCandidate, listCandidates, listJobs, getCandidateInsightsPacket]

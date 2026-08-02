@@ -1,0 +1,26 @@
+generated: '2026-07-21'
+method: searched
+source: https://developers.predictiveindex.com/getting-started
+docs: https://developers.predictiveindex.com/getting-started
+summary:
+  types: [apiKey]
+  api_key_in: [header]
+  oauth2_flows: []
+schemes:
+  - name: apiKeyAuth
+    type: apiKey
+    in: header
+    parameter: api-key
+    description: >-
+      API key sent in the api-key request header (api-key: YOUR_APIKEY_GOES_HERE).
+      The key is generated in the PI Software under a user with organization-admin
+      permissions and cognitive access enabled. If that user is disabled, a new
+      API key must be generated under a different active user. A key generated
+      under a user lacking org-admin permissions yields "Authorization has been
+      denied for this request."
+    sources: [openapi/the-predictive-index-integrations-openapi.yml]
+notes: >-
+  Key-based auth only; no OAuth 2.0 / OpenID Connect scope surface is documented,
+  so no scopes/ artifact is produced. Webhook listeners (outbound) authenticate
+  the reverse direction with HTTP Basic credentials embedded in the webhook URL —
+  see asyncapi/the-predictive-index-webhooks.yml.

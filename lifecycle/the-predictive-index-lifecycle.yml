@@ -1,0 +1,24 @@
+generated: '2026-07-21'
+method: searched
+source: https://developers.predictiveindex.com/getting-started
+versioning:
+  scheme: uri-path
+  current: v1
+  docs: https://developers.predictiveindex.com/getting-started
+  notes: >-
+    Version carried in the URL path (/api/v1). The Integration Examples note a
+    "Summary of Major Changes" and legacy migration notes (e.g. Candidates
+    "replaces Persons from 1.0"), indicating a prior 1.0 generation superseded by v1.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: No formal deprecation policy or RFC 8594 Sunset/Deprecation header support is documented.
+sla:
+  url: null
+  uptime_target: null
+status_page: https://status.predictiveindex.com
+status_notifications:
+  notes: >-
+    The Getting Started guide directs integrators to subscribe to system status
+    notifications via the status page for go-live and outage awareness.
+deprecated_operations: []
