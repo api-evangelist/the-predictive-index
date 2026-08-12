@@ -129,6 +129,8 @@ apis:
   - type: Lifecycle
     url: lifecycle/the-predictive-index-lifecycle.yml
 common:
+- type: MCPServer
+  url: mcp/the-predictive-index-mcp.yml
 - type: DomainSecurity
   url: security/the-predictive-index-domain-security.yml
 - type: DeveloperPortal
