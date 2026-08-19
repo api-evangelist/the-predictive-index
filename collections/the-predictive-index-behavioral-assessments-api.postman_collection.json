@@ -1,0 +1,208 @@
+{
+  "item": [
+    {
+      "id": "5f9a2b62-bdda-40c6-81d0-32510a643278",
+      "name": "Behavioral Assessments",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c3dc21e2-fb90-49db-bf3d-055602d0589b",
+          "name": "Generate a Behavioral Assessment PDF report",
+          "request": {
+            "name": "Generate a Behavioral Assessment PDF report",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "behavioralassessments",
+                "reports",
+                "behavioral"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fae9e391-f733-4bc0-ab73-934b2ed64772",
+              "name": "Behavioral Assessment PDF report",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "behavioralassessments",
+                    "reports",
+                    "behavioral"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6c804e12-5f20-431d-b7a5-67754ab56cae",
+              "name": "Authorization has been denied for this request. The api-key is missing, invalid, or was generated under a user lacking org-admin permissions or who has been disabled.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "behavioralassessments",
+                    "reports",
+                    "behavioral"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e6c20365-307d-4aa1-bba8-c608087ddbd3",
+              "name": "Too many requests. Requests are subject to a rate specified in the X-RateLimit-Limit response header, measured over a 60-second period.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "behavioralassessments",
+                    "reports",
+                    "behavioral"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://integrations.predictiveindex.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "02f0b561-e0ec-4da2-8b59-435082a10220",
+    "name": "The Predictive Index Integration Behavioral Assessments API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "RESTful Integration API for The Predictive Index talent optimization platform. Provides programmatic access to PI Jobs, Behavioral Assessments, and Cognitive Assessments — create and send assessments to candidates or employees and retrieve reports and results. The Jobs and Assessments created and retrieved through the API are the same data that appears within the PI Portal software. NOTE: This description was reconstructed by the API Evangelist enrichment pipeline from The Predictive Index public developer portal (https://developers.predictiveindex.com). Paths, HTTP methods, the api-key security scheme, and the production server were verified against the live portal and gateway (401 responses confirm the documented paths). Request and response schemas are intentionally left partial where the portal does not publish them — this is a documented-surface capture, not the provider's canonical machine-readable spec (which is served behind Azure API Management subscription auth).",
+      "type": "text/plain"
+    }
+  }
+}

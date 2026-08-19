@@ -1,0 +1,84 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "The Predictive Index Integration Behavioral Assessments Candidates API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api-key",
+      "value": "{{api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Candidates",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search for an existing candidate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://integrations.predictiveindex.com/api/v1/candidates/"
+          },
+          "docs": "Search for an existing candidate"
+        },
+        {
+          "info": {
+            "name": "Create a candidate and send an assessment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://integrations.predictiveindex.com/api/v1/candidates/"
+          },
+          "docs": "Single entry point for all assessment-sending workflows. Handles candidate creation or updating, job assignment, and assessment delivery in one request. Returns an isExistingCandidate property indicating whether a new candidate record was created."
+        },
+        {
+          "info": {
+            "name": "Update an existing candidate (e.g. assign new job)",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://integrations.predictiveindex.com/api/v1/candidates/:personId",
+            "params": [
+              {
+                "name": "personId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update an existing candidate (e.g. assign new job)"
+        },
+        {
+          "info": {
+            "name": "Generate a Candidate Insights package",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://integrations.predictiveindex.com/api/v1/candidates/:personId/insightspacket",
+            "params": [
+              {
+                "name": "personId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Generate a Candidate Insights package"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

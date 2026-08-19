@@ -1,0 +1,207 @@
+{
+  "item": [
+    {
+      "id": "48eeae52-8767-4c9d-ae51-e9dee52c2d85",
+      "name": "Jobs",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bebf887b-9a74-476e-9a3c-a3633fc64a2d",
+          "name": "Retrieve all jobs",
+          "request": {
+            "name": "Retrieve all jobs",
+            "description": {
+              "content": "Organizational positions with target factor ranges and candidate counts.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "jobs",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "15f3dd97-3cc6-4bac-887d-efe4e095b0d7",
+              "name": "Job list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "jobs",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9c06ccac-7f86-47a5-8f62-8a8fa2d145b3",
+              "name": "Authorization has been denied for this request. The api-key is missing, invalid, or was generated under a user lacking org-admin permissions or who has been disabled.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "jobs",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b9d8d0c2-700f-4acc-9342-69c3aa9b2b8f",
+              "name": "Too many requests. Requests are subject to a rate specified in the X-RateLimit-Limit response header, measured over a 60-second period.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "jobs",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://integrations.predictiveindex.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "81b120df-a49c-4b75-9648-806dda2ddb60",
+    "name": "The Predictive Index Integration Behavioral Assessments Jobs API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "RESTful Integration API for The Predictive Index talent optimization platform. Provides programmatic access to PI Jobs, Behavioral Assessments, and Cognitive Assessments — create and send assessments to candidates or employees and retrieve reports and results. The Jobs and Assessments created and retrieved through the API are the same data that appears within the PI Portal software. NOTE: This description was reconstructed by the API Evangelist enrichment pipeline from The Predictive Index public developer portal (https://developers.predictiveindex.com). Paths, HTTP methods, the api-key security scheme, and the production server were verified against the live portal and gateway (401 responses confirm the documented paths). Request and response schemas are intentionally left partial where the portal does not publish them — this is a documented-surface capture, not the provider's canonical machine-readable spec (which is served behind Azure API Management subscription auth).",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "The Predictive Index Integration Behavioral Assessments Employees API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api-key",
+      "value": "{{api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Employees",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search for an existing employee",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://integrations.predictiveindex.com/api/v1/employees/"
+          },
+          "docs": "Search for an existing employee"
+        },
+        {
+          "info": {
+            "name": "Generate a Coaching Guide PDF report for an employee",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://integrations.predictiveindex.com/api/v1/employees/reports/coachingguide"
+          },
+          "docs": "Generate a Coaching Guide PDF report for an employee"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

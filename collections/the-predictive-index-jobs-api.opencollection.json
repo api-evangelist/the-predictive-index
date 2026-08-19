@@ -1,0 +1,37 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "The Predictive Index Integration Behavioral Assessments Jobs API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api-key",
+      "value": "{{api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Jobs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve all jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://integrations.predictiveindex.com/api/v1/jobs/"
+          },
+          "docs": "Organizational positions with target factor ranges and candidate counts."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
