@@ -114,6 +114,8 @@ apis:
   humanURL: https://developers.predictiveindex.com/
   baseURL: https://integrations.predictiveindex.com
   tags:
+  - Job
+  tags_raw:
   - Jobs
   properties:
   - type: OpenAPI
