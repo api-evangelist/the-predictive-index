@@ -1,10 +1,7 @@
 {
   "provider": "the-predictive-index",
   "sources": [
-    "the-predictive-index-behavioral-assessments-api-openapi.yml",
-    "the-predictive-index-candidates-api-openapi.yml",
-    "the-predictive-index-employees-api-openapi.yml",
-    "the-predictive-index-jobs-api-openapi.yml"
+    "_original/the-predictive-index-integrations-openapi.yml"
   ],
   "outputs": [
     "the-predictive-index-behavioral-assessments-api-openapi.yml",
@@ -15,6 +12,15 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "the-predictive-index-integrations-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "the-predictive-index-behavioral-assessments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "the-predictive-index-candidates-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "the-predictive-index-employees-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "the-predictive-index-jobs-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
