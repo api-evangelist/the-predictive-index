@@ -43,10 +43,10 @@ paths:
           $ref: '#/components/responses/RateLimited'
 components:
   responses:
-    Unauthorized:
-      description: Authorization has been denied for this request. The api-key is missing, invalid, or was generated under a user lacking org-admin permissions or who has been disabled.
     RateLimited:
       description: Too many requests. Requests are subject to a rate specified in the X-RateLimit-Limit response header, measured over a 60-second period.
+    Unauthorized:
+      description: Authorization has been denied for this request. The api-key is missing, invalid, or was generated under a user lacking org-admin permissions or who has been disabled.
   securitySchemes:
     apiKeyAuth:
       type: apiKey
