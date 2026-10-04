@@ -154,6 +154,9 @@ apis:
   - type: Lifecycle
     url: lifecycle/the-predictive-index-lifecycle.yml
 common:
+- type: CapabilityMap
+  url: capabilities/the-predictive-index-capability-edges.yml
+  name: The Predictive Index Business Capability Map
 - type: Website
   url: https://www.predictiveindex.com/
 - type: X-MCPServerCandidate

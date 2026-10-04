@@ -1,0 +1,56 @@
+slug: the-predictive-index
+provider: The Predictive Index
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 4
+edges:
+- tag: Candidates
+  spec_file: the-predictive-index-candidates-api-openapi.yml
+  capability_id: BC-300.10
+  capability_id_l1: BC-300
+  capability_name: Talent Acquisition Management
+  confidence: 0.92
+  evidence: POST /api/v1/candidates/  'Create a candidate and send an assessment'; 'Update an existing
+    candidate (e.g. assign new job)'
+  reason: Candidate creation, assessment dispatch and job assignment are recruiting/screening operations
+    — Talent Acquisition Management.
+- tag: Employees
+  spec_file: the-predictive-index-employees-api-openapi.yml
+  capability_id: BC-300.20
+  capability_id_l1: BC-300
+  capability_name: Talent Management
+  confidence: 0.8
+  evidence: GET /api/v1/employees/reports/coachingguide  'Generate a Coaching Guide PDF report for an
+    employee'
+  reason: Employee lookup plus coaching guide generation supports performance and development of existing
+    employees — Talent Management within HCM.
+- tag: Behavioral Assessments
+  spec_file: the-predictive-index-behavioral-assessments-api-openapi.yml
+  capability_id: BC-300.20
+  capability_id_l1: BC-300
+  capability_name: Talent Management
+  confidence: 0.75
+  evidence: GET /api/v1/behavioralassessments/reports/behavioral  'Generate a Behavioral Assessment PDF
+    report'
+  reason: PI behavioral assessments underpin talent evaluation and development for employees/candidates
+    — Human Capital Management. Sub-capability is ambiguous between talent acquisition screening and talent
+    management; assessment reporting on people leans to Talent Management.
+- tag: Jobs
+  spec_file: the-predictive-index-jobs-api-openapi.yml
+  capability_id: BC-300.10
+  capability_id_l1: BC-300
+  capability_name: Talent Acquisition Management
+  confidence: 0.7
+  evidence: GET /api/v1/jobs/  'Retrieve all jobs'
+  reason: In PI's hiring platform, jobs are the job targets candidates are assessed and assigned against,
+    so this is recruiting-side reference data within Talent Acquisition. Thin context (no schemas), hence
+    moderate confidence.
