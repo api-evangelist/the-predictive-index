@@ -47,7 +47,7 @@ accessModel:
 image: https://media.predictiveindex.com/wp-content/uploads/2025/02/25165442/ThePredictiveIndex_Thumbnail-1.jpg
 specificationVersion: '0.23'
 created: '2026-07-17'
-modified: '2026-07-21'
+modified: '2026-10-06'
 tags:
 - Company
 - Talent Optimization
@@ -154,6 +154,8 @@ apis:
   - type: Lifecycle
     url: lifecycle/the-predictive-index-lifecycle.yml
 common:
+- url: https://www.predictiveindex.com/blog/feed/
+  type: BlogRSS
 - type: CapabilityMap
   url: capabilities/the-predictive-index-capability-edges.yml
   name: The Predictive Index Business Capability Map
