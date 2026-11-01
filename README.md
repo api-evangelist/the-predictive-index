@@ -64,6 +64,123 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-The Predictive Index is a company surfaced as a portfolio company of general-catalyst and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+The Predictive Index (PI) is a talent optimization platform that pairs 70+ years of behavioral science with software to help organizations hire, engage, and develop teams — behavioral and cognitive assessments, hiring and candidate screening, leadership development, employee engagement, and performance management. PI publishes a RESTful Integration API (on Azure API Management) that lets external systems such as ATS/HRIS platforms programmatically create candidates, send behavioral and cognitive assessments, retrieve jobs and results, and generate insight and coaching-guide reports — the same data that appears in the PI Portal software. Status-change notification webhooks push assessment completion events to listening systems. Backed by a $50M investment from General Catalyst.
 
-Backed by: general-catalyst
+**Areas:** Company · Talent Optimization · Human Resources · Assessment · Behavioral Science · Hiring · Recruiting · Employee Engagement · Integration API
+
+## The Predictive Index on APIs.io
+
+Everything profiled for The Predictive Index is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/the-predictive-index/](https://apis.io/providers/the-predictive-index/)** — or go straight to one of the APIs or properties below.
+
+### APIs (4)
+
+- [The Predictive Index Behavioral Assessments API](https://apis.io/apis/the-predictive-index/the-predictive-index-behavioral-assessments-api/) — The Behavioral Assessments API from The Predictive Index — 1 operation(s) for behavioral assessments.
+- [The Predictive Index Candidates API](https://apis.io/apis/the-predictive-index/the-predictive-index-candidates-api/) — The Candidates API from The Predictive Index — 3 operation(s) for candidates.
+- [The Predictive Index Employees API](https://apis.io/apis/the-predictive-index/the-predictive-index-employees-api/) — The Employees API from The Predictive Index — 2 operation(s) for employees.
+- [The Predictive Index Jobs API](https://apis.io/apis/the-predictive-index/the-predictive-index-jobs-api/) — The Jobs API from The Predictive Index — 1 operation(s) for jobs.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [The Predictive Index Webhooks](https://apis.io/asyncapis/the-predictive-index/the-predictive-index-webhooks/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [the-predictive-index](https://apis.io/servers/the-predictive-index/the-predictive-index/)
+
+#### Collections (4)
+
+Postman and Open Collection request collections.
+
+- [The Predictive Index Integration Behavioral Assessments API](https://apis.io/collections/the-predictive-index/open-the-predictive-index-behavioral-assessments-api/)
+- [The Predictive Index Integration Behavioral Assessments Candidates API](https://apis.io/collections/the-predictive-index/open-the-predictive-index-candidates-api/)
+- [The Predictive Index Integration Behavioral Assessments Employees API](https://apis.io/collections/the-predictive-index/open-the-predictive-index-employees-api/)
+- [The Predictive Index Integration Behavioral Assessments Jobs API](https://apis.io/collections/the-predictive-index/open-the-predictive-index-jobs-api/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [The Predictive Index Authentication](https://apis.io/security/the-predictive-index/the-predictive-index-authentication/)
+- [The Predictive Index Domain Security](https://apis.io/security/the-predictive-index/the-predictive-index-domain-security/)
+- [The Predictive Index Vulnerability Disclosure](https://apis.io/security/the-predictive-index/the-predictive-index-vulnerability-disclosure/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.predictiveindex.com/)
+- [Documentation](https://developers.predictiveindex.com/getting-started)
+- [Getting started](https://developers.predictiveindex.com/getting-started)
+- [API reference](https://developers.predictiveindex.com/apis)
+- [Pricing](https://www.predictiveindex.com/plans/)
+- [Sign up](https://app.predictiveindex.com/)
+- [Support](https://www.predictiveindex.com/company/contact-us/#support-case)
+- [Blog](https://www.predictiveindex.com/blog/)
+- [Security](https://www.predictiveindex.com/security/responsible-disclosure/)
+- [Terms of service](https://www.predictiveindex.com/terms/)
+- [Privacy policy](https://www.predictiveindex.com/privacy/)
+- [GitHub](https://github.com/predictiveindex)
+- [Status](https://status.predictiveindex.com)
+
+## API Evangelist rating
+
+**Kin Score 43.6** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 52.4 |
+| Contract governance | 0.0 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 58.9 |
+| Access clarity | 31.6 |
+
+**Agent readiness 25.2** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | yes |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 25.5** — Employment & Payroll
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/the-predictive-index/](https://apis.io/providers/the-predictive-index/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for The Predictive Index: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/the-predictive-index/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
